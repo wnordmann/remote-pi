@@ -1,0 +1,23 @@
+{
+  "name": "remote-pi",
+  "version": "1.0.0",
+  "description": "pi controlled using node",
+  "main": "index.js",
+  "dependencies": {
+    "onoff": "^3.0.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wnordmann/remote-pi.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wnordmann/remote-pi/issues"
+  },
+  "homepage": "https://github.com/wnordmann/remote-pi#readme"
+}
