@@ -1,5 +1,5 @@
-var Gpio = require('onoff').Gpio; //include onoff to interact with the GPIO
-var LED = new Gpio(4, 'out'); //use GPIO pin 4, and specify that it is output
+// var Gpio = require('onoff').Gpio; //include onoff to interact with the GPIO
+// var LED = new Gpio(4, 'out'); //use GPIO pin 4, and specify that it is output
 // var pushButton = new Gpio(17, 'in', 'both'); //use GPIO pin 17 as input, and 'both' button presses, and releases should be handled
 var buttons = require('rpi-gpio-buttons')([17]);
 
@@ -20,10 +20,10 @@ var buttons = require('rpi-gpio-buttons')([17]);
 // }
 //
 // setTimeout(endBlink, 10000); //stop blinking after 5 seconds
-function turnOffLED(){
-  LED.writeSync(0);
-  console.log('turn OFF LED', Date());
-}
+// function turnOffLED(){
+//   LED.writeSync(0);
+//   console.log('turn OFF LED', Date());
+// }
 // pushButton.watch(function (err, value) { //Watch for hardware interrupts on pushButton GPIO, specify callback function
 //   if (err) { //if an error
 //     console.error('There was an error', err); //output error message to console
@@ -43,9 +43,9 @@ buttons.on('clicked', function (pin) {
   switch(pin) {
     // Up button on pin 11 was clicked
     case 17:
-      LED.writeSync(1);
+      // LED.writeSync(1);
       console.log('turn on LED', Date())
-      setInterval(turnOffLED, 10000);
+      // setInterval(turnOffLED, 10000);
       break;
   }
 });
