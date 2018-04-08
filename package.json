@@ -4,7 +4,8 @@
   "description": "pi controlled using node",
   "main": "index.js",
   "dependencies": {
-    "onoff": "^3.0.2"
+    "onoff": "^3.0.2",
+    "rpi-gpio-buttons": "^1.0.4"
   },
   "devDependencies": {},
   "scripts": {
