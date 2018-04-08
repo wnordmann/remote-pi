@@ -26,8 +26,10 @@ pushButton.watch(function (err, value) { //Watch for hardware interrupts on push
     console.error('There was an error', err); //output error message to console
   return;
   }
-  LED.writeSync(1);
-  setInterval(turnOffLED, 1000);
+  if(value){ // Only want to detect a push button - 1
+    LED.writeSync(1);
+    setInterval(turnOffLED, 10000);
+  }
   // LED.writeSync(value); //turn LED on or off depending on the button state (0 or 1)
 });
 
