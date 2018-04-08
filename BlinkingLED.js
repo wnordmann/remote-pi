@@ -1,7 +1,7 @@
 var Gpio = require('onoff').Gpio; //include onoff to interact with the GPIO
 var LED = new Gpio(4, 'out'); //use GPIO pin 4, and specify that it is output
 var pushButton = new Gpio(17, 'in', 'both'); //use GPIO pin 17 as input, and 'both' button presses, and releases should be handled
-var blinkInterval = setInterval(blinkLED, 1000); //run the blinkLED function every 250ms
+// var blinkInterval = setInterval(blinkLED, 1000); //run the blinkLED function every 250ms
 //
 // function blinkLED() { //function to start blinking
 //   if (LED.readSync() === 0) { //check the pin state, if the state is 0 (or off)
