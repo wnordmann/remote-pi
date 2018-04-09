@@ -3,7 +3,7 @@ var LED = new Gpio(4, 'out'); //use GPIO pin 4, and specify that it is output
 var pushButton = new Gpio(17, 'in', 'both'); //use GPIO pin 17 as input, and 'both' button presses, and releases should be handled
 
 var STATE = {
-  LED: false;
+  LED: false
 }
 
 // var blinkInterval = setInterval(blinkLED, 1000); //run the blinkLED function every 250ms
