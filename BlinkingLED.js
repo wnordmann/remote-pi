@@ -44,7 +44,8 @@ pushButton.watch(function (err, value) { //Watch for hardware interrupts on push
   return;
   }
   console.log("button press ", value, "  ", STATE.LED);
-  if(value && !STATE.LED){ 
+  if(value && !STATE.LED){
+    console.log('here?!?');
     turnOnLED(10);
   }
 });
