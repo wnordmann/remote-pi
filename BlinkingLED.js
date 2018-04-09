@@ -1,7 +1,10 @@
 var Gpio = require('onoff').Gpio; //include onoff to interact with the GPIO
 var LED = new Gpio(4, 'out'); //use GPIO pin 4, and specify that it is output
 var pushButton = new Gpio(17, 'in', 'both'); //use GPIO pin 17 as input, and 'both' button presses, and releases should be handled
-// var buttons = require('rpi-gpio-buttons')([17]);
+
+var STATE = {
+  LED: false;
+}
 
 // var blinkInterval = setInterval(blinkLED, 1000); //run the blinkLED function every 250ms
 //
@@ -23,7 +26,13 @@ var pushButton = new Gpio(17, 'in', 'both'); //use GPIO pin 17 as input, and 'bo
 
 function turnOffLED() {
   LED.writeSync(0);
-  console.log('turn OFF LED', Date())
+  STATE.LED = false;
+  console.log('turn OFF LED', Date());
+}
+function turnOnLED() {
+  LED.writeSync(1);
+  STATE.LED = true;
+  console.log('turn on LED', Date());
 }
 
 pushButton.watch(function (err, value) { //Watch for hardware interrupts on pushButton GPIO, specify callback function
@@ -32,9 +41,8 @@ pushButton.watch(function (err, value) { //Watch for hardware interrupts on push
   return;
   }
   console.log("button press ", value);
-  if(value){ // Only want to detect a push button - 1
-    LED.writeSync(1);
-    console.log('turn on LED', Date())
+  if(value && !STATE.LED){ // Only want to detect a push button - 1
+    turnOnLED();
     setInterval(turnOffLED, 10000);
   }
   // LED.writeSync(value); //turn LED on or off depending on the button state (0 or 1)
