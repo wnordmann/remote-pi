@@ -34,7 +34,7 @@ function turnOnLED(seconds) {
   STATE.LED = true;
   console.log('turn on LED', Date());
   if(seconds > 0){
-    setInterval(turnOffLED, seconds * 1000);
+    setTimeout(turnOffLED, seconds * 1000);
   }
 }
 
