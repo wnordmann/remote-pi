@@ -25,6 +25,7 @@ pushButton.watch(function (err, value) { //Watch for hardware interrupts on push
   return;
   }
   if(value && !STATE.LED){
+    console.log('lights on');
     turnOnLEDForSec(10);
   }
 });
@@ -37,7 +38,7 @@ smallButton.watch(function (err, value){
   }
   if(value){
     console.log('lights off');
-    LED.writeSync(0);
+    turnOffLED();
   }
 });
 
