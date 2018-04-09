@@ -29,10 +29,13 @@ function turnOffLED() {
   STATE.LED = false;
   console.log('turn OFF LED', Date());
 }
-function turnOnLED() {
+function turnOnLED(seconds) {
   LED.writeSync(1);
   STATE.LED = true;
   console.log('turn on LED', Date());
+  if(seconds > 0){
+    setInterval(turnOffLED, seconds * 1000);
+  }
 }
 
 pushButton.watch(function (err, value) { //Watch for hardware interrupts on pushButton GPIO, specify callback function
@@ -41,11 +44,9 @@ pushButton.watch(function (err, value) { //Watch for hardware interrupts on push
   return;
   }
   console.log("button press ", value, "  ", STATE.LED);
-  if(value && !STATE.LED){ // Only want to detect a push button - 1
-    turnOnLED();
-    setInterval(turnOffLED, 10000);
+  if(value && !STATE.LED){ 
+    turnOnLED(10);
   }
-  // LED.writeSync(value); //turn LED on or off depending on the button state (0 or 1)
 });
 
 // bind to the clicked event and check for the assigned pins when clicked
