@@ -19,7 +19,7 @@ var irD = new Gpio(27, 'in', 'both');
 var Pump = new Gpio(25, 'out');
 
 // Relay connected to solinoid valve
-var Valve = new Gpio(26, 'out');
+var Valve = new Gpio(23, 'out');
 
 // Time Const
 // var FULL = 300000;  // Full time 5 minutes
