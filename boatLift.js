@@ -7,7 +7,7 @@ var Gpio = require('onoff').Gpio; //include onoff to interact with the GPIO
 // D - half down - gpio 27
 // 'both' button presses, and releases should be handled
 // IR Button A - GPIO pin 14 full up
-var irA = new Gpio(14, 'in', 'both');
+var irA = new Gpio(14, 'in',  'rising', {debounceTimeout: 10});
 // IR Button B - GPIO pin 15 full down
 var irB = new Gpio(15, 'in', 'both');
 // IR Button D - GPIO pin 18 half up
