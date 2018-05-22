@@ -48,6 +48,8 @@ function move(direction, time) {
       Valve.writeSync(1);
     }
     setTimeout(stop, time);
+  } else {
+    console.log('in motion');
   }
 }
 
