@@ -37,9 +37,11 @@ function move(direction, time) {
   if(!STATE.movig){
     STATE.moving = true;
     if(direction === UP){
+      console.log("Moving up");
       Pump.writeSync(1);
     }
     if(direction === DOWN){
+      console.log("Moving down");
       valve.writeSync(1);
     }
     setTimeout(stop, time);
@@ -47,6 +49,7 @@ function move(direction, time) {
 }
 
 function stop(){
+  console.log('Stop');
   Pump.writeSync(0);
   Valve.writeSync(0);
   STATE.moving = false;
