@@ -42,7 +42,7 @@ function move(direction, time) {
     }
     if(direction === DOWN){
       console.log("Moving down");
-      valve.writeSync(1);
+      Valve.writeSync(1);
     }
     setTimeout(stop, time);
   }
