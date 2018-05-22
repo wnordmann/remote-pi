@@ -24,8 +24,8 @@ var Valve = new Gpio(23, 'out');
 // Time Const
 // var FULL = 300000;  // Full time 5 minutes
 // var HALF = 150000;  // Full time 2.5 minutes
-var FULL = 3000;
-var HALF = 1500;
+var FULL = 30000;
+var HALF = 15000;
 
 
 // Direction const
