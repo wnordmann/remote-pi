@@ -7,13 +7,13 @@ var Gpio = require('onoff').Gpio; //include onoff to interact with the GPIO
 // D - half down - gpio 27
 // 'both' button presses, and releases should be handled
 // IR Button A - GPIO pin 14 full up
-var irA = new Gpio(14, 'in', both);
+var irA = new Gpio(14, 'in', 'both');
 // IR Button B - GPIO pin 15 full down
-var irB = new Gpio(15, 'in', both);
+var irB = new Gpio(15, 'in', 'both');
 // IR Button C - GPIO pin 18 half up
-var irC = new Gpio(18, 'in', both);
+var irC = new Gpio(18, 'in', 'both');
 // IR Button D - GPIO pin 27 half down
-var irD = new Gpio(27, 'in', both);
+var irD = new Gpio(27, 'in', 'both');
 
 // IoT Device Connected to Air Pump
 var Pump = new Gpio(25, 'out');
@@ -68,7 +68,7 @@ irA.watch(function (err, value){
 
 function unexportOnClose() { //function to run when exiting program
   Pump.writeSync(0);
-  Pump.unexport(); 
+  Pump.unexport();
   Valve.writeSync(0);
   Valve.unexport();
 
