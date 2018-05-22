@@ -39,7 +39,7 @@ function move(direction, time) {
     if(direction === UP){
       Pump.writeSync(1);
     }
-    if(direction === down){
+    if(direction === DOWN){
       valve.writeSync(1);
     }
     setTimeout(stop, time);
